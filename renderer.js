@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const toolCards = document.querySelectorAll('.tool-card');
     const toolList = document.getElementById('tools');
     const noToolsMessage = document.getElementById('no-tools');
+    const emailElement = document.getElementById('email');
 
     // 工具筛选函数
     function filterTools(category) {
@@ -37,4 +38,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 初始显示全部工具
     filterTools('all');
+
+    // 点击邮箱复制功能
+    emailElement.addEventListener('click', () => {
+        const email = emailElement.textContent;
+        navigator.clipboard.writeText(email).then(() => {
+            alert('Email copied to clipboard: ' + email);
+        }).catch(err => {
+            console.error('Failed to copy text: ', err);
+        });
+    });
+
+    // GitHub 链接点击事件自动跳转，浏览器会默认打开链接，不需要额外逻辑
 });
