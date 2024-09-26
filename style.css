@@ -1,0 +1,125 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* 左侧导航栏样式 */
+.sidebar {
+    width: 200px;
+    background-color: #333;
+    color: white;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 20px 0;
+}
+
+.sidebar li {
+    padding: 15px;
+}
+
+.sidebar li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s;
+}
+
+.sidebar li a:hover {
+    background-color: #575757;
+}
+
+/* 右侧工具显示区样式 */
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.tool-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tool-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tool-card img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.tool-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 二级页面样式 */
+.tool-detail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    padding: 20px;
+    display: none;
+}
+
+.tool-detail.active {
+    display: block;
+}
+
+.back-btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    background-color: #575757;
+}
+
+.hidden {
+    display: none;
+}
+
+/* style.css */
+.no-tools {
+    text-align: center;
+    color: #999;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* 隐藏元素的样式 */
+.hidden {
+    display: none;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toolbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- 左侧导航栏 -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#" data-category="all">全部</a></li>
+                <li><a href="#" data-category="format-conversion">格式转换</a></li>
+                <li><a href="#" data-category="fun-sites">有趣网站</a></li>
+                <li><a href="#" data-category="coming-soon">尽情期待</a></li>
+            </ul>
+        </nav>
+
+        <!-- 右侧工具显示区 -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Available Tools</h1>
+            </div>
+            <div id="tools" class="tool-list">
+                <!-- 工具卡片，根据分类显示 -->
+                <div class="tool-card" data-category="format-conversion">
+                    <img src="icons/markdown.png" alt="Markdown to PDF">
+                    <p>Markdown to PDF</p>
+                </div>
+                <div class="tool-card" data-category="format-conversion">
+                    <img src="icons/jpg.png" alt="JPG to PDF">
+                    <p>JPG to PDF</p>
+                </div>
+                <!-- 可以继续添加其他工具 -->
+            </div>
+            <!-- 无工具时显示的提示 -->
+            <div id="no-tools" class="no-tools hidden">
+                <p>当前还没有工具</p>
+            </div>
+        </div>
+
+        <!-- 二级页面区域 -->
+        <div id="tool-detail" class="tool-detail hidden">
+            <button class="back-btn">← Back</button>
+            <h2>Tool Details</h2>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>
