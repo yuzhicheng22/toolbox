@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const toolList = document.getElementById('tools');
     const noToolsMessage = document.getElementById('no-tools');
     const emailElement = document.getElementById('email');
+    const toolDetail = document.getElementById('tool-detail');
+    const backBtn = document.querySelector('.back-btn');
 
     // 工具筛选函数
     function filterTools(category) {
@@ -38,6 +40,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 初始显示全部工具
     filterTools('all');
+
+    // 点击工具卡片显示二级页面
+    toolCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const toolName = card.dataset.tool;
+            toolList.style.display = 'none'; // 隐藏工具列表
+            toolDetail.classList.add('active'); // 显示二级页面
+            document.querySelector('h2').innerText = `Details of ${toolName}`;
+        });
+    });
+
+    // 返回按钮功能
+    backBtn.addEventListener('click', () => {
+        toolDetail.classList.remove('active');
+        toolList.style.display = 'flex'; // 显示工具列表
+    });
 
     // 点击邮箱复制功能
     emailElement.addEventListener('click', () => {

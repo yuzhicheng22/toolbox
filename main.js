@@ -5,7 +5,7 @@ function createWindow() {
     const mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
-        frame: false, // 隐藏默认的顶部功能栏
+        frame: true, // 显示默认的顶部功能栏
         webPreferences: {
             preload: path.join(__dirname, 'renderer.js'),
             nodeIntegration: true, // 允许使用 Node.js API
@@ -14,7 +14,6 @@ function createWindow() {
     });
 
     mainWindow.loadFile('index.html');
-    // win.loadFile('index.html');
 }
 
 app.whenReady().then(() => {

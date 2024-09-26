@@ -18,7 +18,7 @@ body {
 /* 左侧导航栏样式 */
 .sidebar {
     width: 200px;
-    background-color: #333;
+    background-color: #666;
     color: white;
 }
 
@@ -141,6 +141,8 @@ body {
 
 .contact-hover {
     position: relative;
+    /* 确保悬停区域足够大 */
+    display: inline-block;
 }
 
 .contact-hover span {
@@ -153,14 +155,25 @@ body {
 
 .contact-info {
     position: absolute;
-    top: 100%;
+    /* 调整位置，确保不会重叠 */
+    top: 120%;
     right: 0;
     background-color: white;
     color: #333;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* 确保显示在最上层 */
+    z-index: 10;
+    /* 设置宽度防止过窄 */
+    width: 200px;
+    /* 默认隐藏 */
     display: none;
+}
+
+.contact-hover:hover .contact-info {
+    /* 悬停时显示 */
+    display: block;
 }
 
 .contact-info p {
